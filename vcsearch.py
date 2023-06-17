@@ -1,5 +1,8 @@
 import vccrud, vclist
 
+#Función para pedirle al usuario que seleccione una película, la funcion devuelve 
+#el código de la película seleccionada o -1 si se canceló la búsqueda
+#la función incluye buscadores para facilitar la ubicacion del código
 def videoSearch():
     while True:
         print("Ingrese el código del video o:")
@@ -29,6 +32,9 @@ def videoSearch():
             except ValueError:
                 print("La opción ingresada no es un número, ni es una de las opciones admitidas. Reintente por favor. \n")
 
+#Función para pedirle al usuario que seleccione un cliente, la funcion devuelve 
+#el código de la película seleccionada o -1 si se canceló la búsqueda
+#la función incluye buscadores para facilitar la ubicacion del código
 def clientSearch():
     while True:
         print("Ingrese el número de socio o:")

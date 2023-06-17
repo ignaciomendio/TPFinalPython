@@ -1,5 +1,7 @@
 import vccrud, vcquerys
 
+#imprie la lista de peliculas pasadas por parámetro
+#No devuelve valores
 def lisMovies(movies):
     print("-"*83)
     print("{0:^6}{1:^15}{2:^50}{3:^12}".format("Código", "EAN", "Nombre Película", "Género"))
@@ -10,6 +12,8 @@ def lisMovies(movies):
     print("-"*83)
     print("\n")
 
+#imprime la lista de los clientes pasadas por parámetro
+#No devuelve valores
 def listClients(clients):
     print("-"*95)
     print("{0:^9}{1:^12}{2:^30}{3:^30}{4:^14}".format("N°Socio", "DNI", "Nombre y Apellido", "Dirección", "Teléfono"))
@@ -20,6 +24,8 @@ def listClients(clients):
     print("-"*95)
     print("\n")
 
+#Imprime la ficha del cliente cuyo codigo se pasa por prámetro
+#No devuelve valores
 def fichaCliente(cod):
     client = vccrud.getClient(cod)
     print("-"*83)
@@ -34,6 +40,8 @@ def fichaCliente(cod):
     print("Películas rentadas Actualmente")
     lisMovies(vcquerys.rented(cod))
 
+#Imprime la ficha del video cuyo codigo se pasa por prámetro
+#No devuelve valores
 def fichaPelicula(cod):
     mov = vccrud.getMovie(cod)
     print("-"*83)

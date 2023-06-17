@@ -1,16 +1,19 @@
+#PROGRAMA PRINCIPAL
+
+# se importan todos los archivos accesorios del TP
 import vcmenu, os, vcsearch, vccrud, vclist, vcquerys, vcforms, vcmisc
 
 
-MAX_RENT = 3
+MAX_RENT = 3 #catidad máxima de películas que un cliente puede alquilar simultáneamente
 
 salir = False
-while not salir:
-    os.system("cls")
-    op = vcmenu.mainMenu()
+while not salir:  #Bucle del menú principal, hasta que no se indica salir no sale
+    os.system("cls")  #Limpia la pantalla cada vez que se vuelve al menu ppal
+    op = vcmenu.mainMenu()  #Ejecuta el Menú principal
     if op == "0": #Verificar disponibiliad de un titulo en particular
-        movCode = vcsearch.videoSearch()
+        movCode = vcsearch.videoSearch() #varga Buscador de películas
         if movCode != -1: #el usuario no canceló la busqueda
-            movie = vccrud.getMovie(movCode)
+            movie = vccrud.getMovie(movCode) #se obtiene la pelicula seleccionada
             mensaje = "\nLa película: " + movie[2] + "Codigo:" + movie[0] + ", "
             if movie[4] == "":
                 mensaje += "ESTA DISPONIBLE."

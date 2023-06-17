@@ -1,14 +1,17 @@
 import vccrud, vcmisc
 
+#Fromulario para Cargar un nuevo cliente, la función devuelve una lista con los datos del nuevo cliente
 def formNewClient():
     print("-"*80)
     print("{0:^80}".format("FORMULARIO PARA ALTA CLIENTE"))
     print("-"*80)
+    #Carga de los datos del cliente
     dni = input("{0:>20}: ".format("DNI"))
     nom = input("{0:>20}: ".format("Nombre y Apellido"))
     dir = input("{0:>20}: ".format("Dirección"))
     tel = input("{0:>20}: ".format("Teléfono"))
     clients = vccrud.getAllClients()
+    #Verifica que el DNI ingresado no pertenzca a un cliente ya existente
     dniexist = False
     for cli in clients:
         dniexist = dniexist or cli[1]==dni
@@ -23,12 +26,15 @@ def formNewClient():
         else:
             return []
     
+# Formulario para editar un nuevo cliente existente
+#El formulario devuelve una lista con los datos del cliente modificados
 def formEditClient(cliCode):
     print("-"*80)
     print("{0:^80}".format("FORMULARIO PARA EDICION DE CLIENTE"))
     print("{0:^80}".format("Ingrese los nuevos valores o..."))
     print("{0:^80}".format("presione ENTER para mantener los valores actuales"))
     print("-"*80)
+    # Se ingresan los datos, si no se ingresa nada se asume que se quiere mantener el valor sin modificar
     dni = input("{0:>20}: ".format("DNI"))
     nom = input("{0:>20}: ".format("Nombre y Apellido"))
     dir = input("{0:>20}: ".format("Dirección"))
@@ -59,7 +65,8 @@ def formEditClient(cliCode):
             return [str(cliCode), dni, nom, dir, tel]
         else:
             return []
-        
+
+#Formulario para Cargar un nuevo videp, la función devuelve una lista con los datos del nuevo video
 def formNewMovie():
     print("-"*80)
     print("{0:^80}".format("FORMULARIO PARA ALTA PELICULA"))
@@ -87,7 +94,9 @@ def formNewMovie():
             return [str(int(movies[-1][0])+1), ean, nom, gen, ""]
         else:
             return []
-        
+
+# Formulario para editar un nuevo cliente existente
+#El formulario devuelve una lista con los datos del cliente modificado   
 def formEditMovie(movCode):
     print("-"*80)
     print("{0:^80}".format("FORMULARIO PARA EDICION DE PELICULAS"))
