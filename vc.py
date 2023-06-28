@@ -75,6 +75,8 @@ while not salir:  #Bucle del menú principal, hasta que no se indica salir no sa
             cliCode = vcsearch.clientSearch()
             if cliCode >= 0:
                 vclist.fichaCliente(cliCode)
+                print("Películas rentadas Actualmente")
+                vclist.lisMovies(vcquerys.rented(cliCode))
                 vcmisc.esperar()
         elif subop == "M": #Usuario selecciona Modificacion de cliente
             cliCode = vcsearch.clientSearch()

@@ -37,8 +37,7 @@ def fichaCliente(cod):
     print("           Dirección: ", client[3])
     print("            Telefono: ", client[4])
     print("-"*83)
-    print("Películas rentadas Actualmente")
-    lisMovies(vcquerys.rented(cod))
+    
 
 #Imprime la ficha del video cuyo codigo se pasa por prámetro
 #No devuelve valores

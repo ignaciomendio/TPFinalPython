@@ -1,4 +1,4 @@
-import vccrud, vcmisc
+import vccrud, vcmisc, vclist
 
 #Fromulario para Cargar un nuevo cliente, la función devuelve una lista con los datos del nuevo cliente
 def formNewClient():
@@ -30,7 +30,8 @@ def formNewClient():
 #El formulario devuelve una lista con los datos del cliente modificados
 def formEditClient(cliCode):
     print("-"*80)
-    print("{0:^80}".format("FORMULARIO PARA EDICION DE CLIENTE"))
+    print("{0:^80}".format("FORMULARIO PARA EDICION DEL CLIENTE:"))
+    vclist.fichaCliente(cliCode)
     print("{0:^80}".format("Ingrese los nuevos valores o..."))
     print("{0:^80}".format("presione ENTER para mantener los valores actuales"))
     print("-"*80)
@@ -100,6 +101,7 @@ def formNewMovie():
 def formEditMovie(movCode):
     print("-"*80)
     print("{0:^80}".format("FORMULARIO PARA EDICION DE PELICULAS"))
+    vclist.fichaPelicula(movCode)
     print("{0:^80}".format("Ingrese los nuevos valores o..."))
     print("{0:^80}".format("presione ENTER para mantener los valores actuales"))
     print("-"*80)
