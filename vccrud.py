@@ -47,7 +47,7 @@ def movUpdate(modificado):
     return int(modificado[0])
 
 # lee todas los clientes, reemplaza la que corresponda al código y vuelve a generar el archivo
-def cliUpdate(modificado):
+def cliUpdate(modificado):  
     clients = getAllClients()
     cliFile = open("clientes.csv", "w")
     for cli in clients:

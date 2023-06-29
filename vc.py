@@ -14,14 +14,7 @@ while not salir:  #Bucle del menú principal, hasta que no se indica salir no sa
         movCode = vcsearch.videoSearch() #varga Buscador de películas
         if movCode != -1: #el usuario no canceló la busqueda
             movie = vccrud.getMovie(movCode) #se obtiene la pelicula seleccionada
-            mensaje = "\nLa película: " + movie[2] + "Codigo:" + movie[0] + ", "
-            if movie[4] == "":
-                mensaje += "ESTA DISPONIBLE."
-            else:
-                mensaje += "NO ESTA DISPONIBLE, "
-                cliente = vccrud.getClient(int(movie[4]))
-                mensaje += " está alquilada por " + cliente[2] + ", Nro. de Socio: " + cliente[0] + ".\n"
-            print(mensaje)
+            vclist.fichaPelicula(int(movie[0]))
             vcmisc.esperar()
     elif op == "1": #Ingresar a Menu de alquiler
         subop = vcmenu.rentMenu()

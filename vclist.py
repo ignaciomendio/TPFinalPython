@@ -1,4 +1,4 @@
-import vccrud, vcquerys
+import vccrud
 
 #imprie la lista de peliculas pasadas por parámetro
 #No devuelve valores

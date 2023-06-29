@@ -18,7 +18,7 @@ def videoSearch():
         elif op == "n" or op == "N":
             nom = input("Ingrese el nombre de la película (o parte de él) para Buscar: ")
             searchRes = list(filter(lambda vid: vid[2].lower().find(nom.lower())!=-1,vccrud.getAllVideos()))
-            print("Resultados de búsqueda de {0} en EAN.\n".format(nom))
+            print("Resultados de búsqueda de {0} en Nombre.\n".format(nom))
             vclist.lisMovies(searchRes)
         elif op == "x" or op == "X":
             return -1
@@ -45,7 +45,7 @@ def clientSearch():
         if op == "D" or op == "d":
             dni = input("Ingrese el DNI (o parte de él) para Buscar: ")
             searchRes = list(filter(lambda cli: cli[1].find(dni)!=-1,vccrud.getAllClients()))
-            print("Resultados de búsqueda de {0} en EAN.\n".format(dni))
+            print("Resultados de búsqueda de {0} en DNI.\n".format(dni))
             print("-"*83)
             print("{0:^6}{1:^15}{2:^50}{3:^12}".format("Socio", "DNI", "Nombre y Apellido", "Teléfono"))
             print("-"*83)
@@ -57,7 +57,7 @@ def clientSearch():
         elif op == "n" or op == "N":
             nom = input("Ingrese el nombre del cliente (o parte de él) para Buscar: ")
             searchRes = list(filter(lambda cli: cli[2].lower().find(nom.lower())!=-1,vccrud.getAllClients()))
-            print("Resultados de búsqueda de {0} en EAN.\n".format(nom))
+            print("Resultados de búsqueda de {0} en Nombre.\n".format(nom))
             print("-"*83)
             print("{0:^6}{1:^15}{2:^50}{3:^12}".format("Socio", "DNI", "Nombre y Apellido", "Teléfono"))
             print("-"*83)
