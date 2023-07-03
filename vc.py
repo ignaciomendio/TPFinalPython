@@ -79,19 +79,20 @@ while not salir:  #Bucle del menú principal, hasta que no se indica salir no sa
                     vccrud.cliUpdate(newClient)
         elif subop == "E": #Usuario selecciona Elimicación de cliente
             cliCode = vcsearch.clientSearch()
-            if vcquerys.qtyRented(cliCode) > 0:
-                print("El cliente no se puede eliminar, aún tiene películas sin devolver,")
-                vcmisc.esperar()
-            else:
-                cli= vccrud.getClient(cliCode)
-                conf = input("¿Está seguro de eliminar al cliente {0} (Nro de Socio: {1})?(S/N): ".format(cli[2], cli[0]))
-                if conf in ("s", "S"):
-                    vccrud.cliDelete(cliCode)
-                    print("El cliente se ha eliminado")
+            if cliCode >= 0:           
+                if vcquerys.qtyRented(cliCode) > 0:
+                    print("El cliente no se puede eliminar, aún tiene películas sin devolver,")
                     vcmisc.esperar()
                 else:
-                    print("Eliminación Cancelada")
-                    vcmisc.esperar()
+                    cli= vccrud.getClient(cliCode)
+                    conf = input("¿Está seguro de eliminar al cliente {0} (Nro de Socio: {1})?(S/N): ".format(cli[2], cli[0]))
+                    if conf in ("s", "S"):
+                        vccrud.cliDelete(cliCode)
+                        print("El cliente se ha eliminado")
+                        vcmisc.esperar()
+                    else:
+                        print("Eliminación Cancelada")
+                        vcmisc.esperar()
     elif op == "3": #Usuario selecciona Gestión de películas
         subop = vcmenu.movieMenu()
         if subop == "A": #Usuario selecciona Alta de película
@@ -112,19 +113,20 @@ while not salir:  #Bucle del menú principal, hasta que no se indica salir no sa
                     vccrud.movUpdate(newMov)
         elif subop == "E": #Usuario selecciona Elimicación de Película
             movCode = vcsearch.videoSearch()
-            if not vccrud.movAvailable(movCode):
-                print("La pelicula no se puede eliminar, está alquilada.")
-                vcmisc.esperar()
-            else:
-                mov= vccrud.getMovie(movCode)
-                conf = input("¿Está seguro de eliminar la película: {0} (Nro de Socio: {1})?(S/N): ".format(mov[2], mov[0]))
-                if conf in ("s", "S"):
-                    vccrud.movDelete(movCode)
-                    print("La Película se ha eliminado")
+            if movCode >= 0:
+                if not vccrud.movAvailable(movCode):
+                    print("La pelicula no se puede eliminar, está alquilada.")
                     vcmisc.esperar()
                 else:
-                    print("Eliminación Cancelada")
-                    vcmisc.esperar()
+                    mov= vccrud.getMovie(movCode)
+                    conf = input("¿Está seguro de eliminar la película: {0} (Nro de Socio: {1})?(S/N): ".format(mov[2], mov[0]))
+                    if conf in ("s", "S"):
+                        vccrud.movDelete(movCode)
+                        print("La Película se ha eliminado")
+                        vcmisc.esperar()
+                    else:
+                        print("Eliminación Cancelada")
+                        vcmisc.esperar()
     else:
         salir = True
         print("Programa terminado.")

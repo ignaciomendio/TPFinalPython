@@ -2,9 +2,9 @@ import vccrud, vcmisc, vclist
 
 #Fromulario para Cargar un nuevo cliente, la función devuelve una lista con los datos del nuevo cliente
 def formNewClient():
-    print("-"*80)
-    print("{0:^80}".format("FORMULARIO PARA ALTA CLIENTE"))
-    print("-"*80)
+    print("╔"+ "═"*80 + "╗" )
+    print("║"+ "{0:^80}".format("FORMULARIO PARA ALTA CLIENTE") + "║")
+    print("╚" + "═"*80 + "╝")
     #Carga de los datos del cliente
     dni = input("{0:>20}: ".format("DNI"))
     nom = input("{0:>20}: ".format("Nombre y Apellido"))
@@ -29,12 +29,13 @@ def formNewClient():
 # Formulario para editar un nuevo cliente existente
 #El formulario devuelve una lista con los datos del cliente modificados
 def formEditClient(cliCode):
-    print("-"*80)
-    print("{0:^80}".format("FORMULARIO PARA EDICION DEL CLIENTE:"))
+    print("╔"+ "═"*80 + "╗")
+    print("║"+ "{0:^80}".format("FORMULARIO PARA EDICION DEL CLIENTE:")+ "║")
+    print("╚" + "═"*80 + "╝")
     vclist.fichaCliente(cliCode)
     print("{0:^80}".format("Ingrese los nuevos valores o..."))
     print("{0:^80}".format("presione ENTER para mantener los valores actuales"))
-    print("-"*80)
+    print("═"*82)
     # Se ingresan los datos, si no se ingresa nada se asume que se quiere mantener el valor sin modificar
     dni = input("{0:>20}: ".format("DNI"))
     nom = input("{0:>20}: ".format("Nombre y Apellido"))
@@ -69,9 +70,9 @@ def formEditClient(cliCode):
 
 #Formulario para Cargar un nuevo videp, la función devuelve una lista con los datos del nuevo video
 def formNewMovie():
-    print("-"*80)
-    print("{0:^80}".format("FORMULARIO PARA ALTA PELICULA"))
-    print("-"*80)
+    print("╔"+ "═"*80 + "╗")
+    print("║" + "{0:^80}".format("FORMULARIO PARA ALTA PELICULA") + "║")
+    print("╚" + "═"*80 + "╝")
     valid = False
     while not valid:
         ean = input("{0:>20}: ".format("EAN"))
@@ -99,12 +100,13 @@ def formNewMovie():
 # Formulario para editar un nuevo cliente existente
 #El formulario devuelve una lista con los datos del cliente modificado   
 def formEditMovie(movCode):
-    print("-"*80)
-    print("{0:^80}".format("FORMULARIO PARA EDICION DE PELICULAS"))
+    print(("╔"+ "═"*80 + "╗"))
+    print("║" + "{0:^80}".format("FORMULARIO PARA EDICION DE PELICULAS") + "║")
+    print(("╚"+ "═"*80 + "╝"))
     vclist.fichaPelicula(movCode)
     print("{0:^80}".format("Ingrese los nuevos valores o..."))
     print("{0:^80}".format("presione ENTER para mantener los valores actuales"))
-    print("-"*80)
+    print("═"*82)
     valid = False
     while not valid:
         ean = input("{0:>20}: ".format("EAN"))
