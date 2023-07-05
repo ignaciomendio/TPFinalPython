@@ -6,7 +6,12 @@ def formNewClient():
     print("║"+ "{0:^80}".format("FORMULARIO PARA ALTA CLIENTE") + "║")
     print("╚" + "═"*80 + "╝")
     #Carga de los datos del cliente
-    dni = input("{0:>20}: ".format("DNI"))
+    valido = False
+    while not valido:
+        dni = input("{0:>20}: ".format("DNI"))
+        valido = dni.isnumeric() and len(dni) <= 8 and len(dni) >= 7
+        if not valido:
+            print("El Nro de documento debe ser numérico, de entre 7 y 8 dígitos. Ingrese nuevamente.")
     nom = input("{0:>20}: ".format("Nombre y Apellido"))
     dir = input("{0:>20}: ".format("Dirección"))
     tel = input("{0:>20}: ".format("Teléfono"))
@@ -37,7 +42,12 @@ def formEditClient(cliCode):
     print("{0:^80}".format("presione ENTER para mantener los valores actuales"))
     print("═"*82)
     # Se ingresan los datos, si no se ingresa nada se asume que se quiere mantener el valor sin modificar
-    dni = input("{0:>20}: ".format("DNI"))
+    valido = False
+    while not valido:
+        dni = input("{0:>20}: ".format("DNI"))
+        valido = (dni.isnumeric() and len(dni) <= 8 and len(dni) >= 7) or dni ==""
+        if not valido:
+            print("El Nro de documento debe ser numérico, de entre 7 y 8 dígitos. Ingrese nuevamente.")
     nom = input("{0:>20}: ".format("Nombre y Apellido"))
     dir = input("{0:>20}: ".format("Dirección"))
     tel = input("{0:>20}: ".format("Teléfono"))

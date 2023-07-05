@@ -43,8 +43,8 @@ def clientSearch():
         print("   X: Para Para cancelar y volver al menú") 
         op = input("Ingrese número de socio o la opción deseada: ")
         if op == "D" or op == "d":
-            dni = input("Ingrese el DNI (o parte de él) para Buscar: ")
-            searchRes = list(filter(lambda cli: cli[1].find(dni)!=-1,vccrud.getAllClients()))
+            dni = input("Ingrese el DNI para Buscar: ")
+            searchRes = list(filter(lambda cli: cli[1]==dni,vccrud.getAllClients()))
             print("Resultados de búsqueda de {0} en DNI.\n".format(dni))
             print("-"*83)
             print("{0:^6}{1:^15}{2:^50}{3:^12}".format("Socio", "DNI", "Nombre y Apellido", "Teléfono"))

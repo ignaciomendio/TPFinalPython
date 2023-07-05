@@ -29,7 +29,7 @@ def listClients(clients):
 def fichaCliente(cod):
     client = vccrud.getClient(cod)
     print("╔" + "═"*83 + "╗")
-    print("║" + "FICHA DE CLIENTE" + "║")
+    print("║" + "{0:^83}".format("FICHA DE CLIENTE") + "║")
     print("╚" + "═"*83 + "╝")
     print("       Nro. de Socio: ", client[0])
     print("   Nombre y Apellido: ", client[2])
@@ -44,11 +44,11 @@ def fichaCliente(cod):
 def fichaPelicula(cod):
     mov = vccrud.getMovie(cod)
     print("╔" + "═"*83 + "╗")
-    print("║" + "FICHA DE PELICULA" + "║")
+    print("║" + "{0:^83}".format("FICHA DE PELICULA") + "║")
     print("╚" + "═"*83 + "╝")
     print("    Nro. de Película: ", mov[0])
-    print("          Código EAN: ", mov[2])
-    print("              Nombre: ", mov[1])
+    print("          Código EAN: ", mov[1])
+    print("              Nombre: ", mov[2])
     print("              Género: ", mov[3])
     print("═"*85)
     if mov[4]:
